@@ -4,7 +4,7 @@ import { CartContext } from "../../contexts/CartContext"
 import { Link } from "react-router-dom"
 
 export function Cart() {
-  const { cart } = useContext(CartContext)
+  const { cart, total, addItemCart, removeItemCart } = useContext(CartContext)
 
     return (
       <div className="w-full max-w-7xl px-4 mx-auto">
@@ -40,13 +40,14 @@ export function Cart() {
                 </div>
   
                 <strong className="float-right">
-                  SubTotal: {item.total}
+                  SubTotal: 
+                  {item.total.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
                 </strong>
   
           </section>
         ))}
 
-        {cart.length !== 0 && <p className="font-bold mt-4">Total: R$ 1.000</p>}
+        {cart.length !== 0 && <p className="font-bold mt-4">Total: {total}</p>}
       </div>
     )
   }
