@@ -4,7 +4,6 @@ import { BsCartPlus } from "react-icons/bs"
 import { api } from "../../services/api"
 import { CartContext } from "../../contexts/CartContext";
 import toast from "react-hot-toast";
-import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
 
 export interface ProductProps{
